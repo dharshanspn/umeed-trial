@@ -83,7 +83,7 @@ while True:
            # Calculate the difference in seconds
            n = (target_time - now).total_seconds()
            telegram_bot_sendques(limit_texts)
-           time.sleep(10)
+           time.sleep(n)
 
         driver.get("https://expert.chegg.com/qna/authoring/answer")
         time.sleep(5)
