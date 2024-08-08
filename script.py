@@ -29,32 +29,37 @@ username = "ameerabbaschegg05@proton.me"
 password = "Chegg@050402"
 login_text= f" Logged {sub}"
 limit_texts = f"Limit hit {sub}"
+flag = True
+while flag:
+    try:
+        # Set up the Chrome WebDriver
+        options = webdriver.ChromeOptions()
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
+        driver = webdriver.Chrome(options=options)
+        
+        # Open the Chegg website and log in
+        driver.get("https://expert.chegg.com/auth")
+        time.sleep(3)
+        
+        #print(driver.find_element(By.XPATH, "/html/body").text)
+        
+        # Username
+        element = driver.find_element(By.XPATH, "/html/body/div[1]/main/div[3]/div/form/div[1]/div[2]/div/div/input")  # Replace with the correct XPath
+        element.send_keys(username)
+        element.send_keys(Keys.ENTER)
+        time.sleep(3)
+        
+        # Password
+        passw = driver.find_element(By.XPATH, "/html/body/div[1]/main/div[3]/div/form/div[1]/div[2]/div[2]/div/div/input")  # Replace with the correct XPath
+        passw.send_keys(password)
+        passw.send_keys(Keys.ENTER)
+        time.sleep(3)
+        flag = False
+    except Exception as e:
 
-# Set up the Chrome WebDriver
-options = webdriver.ChromeOptions()
-options.add_argument('--headless')
-options.add_argument('--no-sandbox')
-options.add_argument('--disable-dev-shm-usage')
-driver = webdriver.Chrome(options=options)
-
-# Open the Chegg website and log in
-driver.get("https://expert.chegg.com/auth")
-time.sleep(3)
-
-#print(driver.find_element(By.XPATH, "/html/body").text)
-
-# Username
-element = driver.find_element(By.XPATH, "/html/body/div[1]/main/div[3]/div/form/div[1]/div[2]/div/div/input")  # Replace with the correct XPath
-element.send_keys(username)
-element.send_keys(Keys.ENTER)
-time.sleep(3)
-
-# Password
-passw = driver.find_element(By.XPATH, "/html/body/div[1]/main/div[3]/div/form/div[1]/div[2]/div[2]/div/div/input")  # Replace with the correct XPath
-passw.send_keys(password)
-passw.send_keys(Keys.ENTER)
-time.sleep(3)
-
+        telegram_bot_sendques(f"Password {sub}")
 
 telegram_bot_sendtext(login_text)
 
