@@ -10,7 +10,7 @@ on:
 jobs:
   my_job:
     runs-on: ubuntu-latest
-    timeout-minutes: 90  # Set timeout to 358 minutes
+    timeout-minutes: 356  # Set timeout to 358 minutes
 
     steps:
     - name: Checkout repository
