@@ -107,7 +107,7 @@ while True:
             
         else:
             telegram_bot_sendques(f"{sub}")
-            time.sleep(720)
+            time.sleep(90)
 
     except Exception as e:
         telegram_bot_sendtext(f"An error occurred {sub}")
