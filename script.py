@@ -26,7 +26,7 @@ def telegram_bot_sendtext(bot_message):
 #variables
 sub = "RAH"
 username = "rahulchegg5@gmail.com"
-password = "Author@05."
+password = "Author@05"
 login_text= f" Logged {sub}"
 limit_texts = f"Limit hit {sub}"
 flag = True
