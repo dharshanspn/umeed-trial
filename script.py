@@ -30,6 +30,7 @@ password = "Author@05"
 login_text= f" Logged {sub}"
 limit_texts = f"Limit hit {sub}"
 flag = True
+
 while flag:
     try:
         # Set up the Chrome WebDriver
@@ -107,7 +108,7 @@ while True:
             
         else:
             telegram_bot_sendques(f"{sub}")
-            time.sleep(90)
+            time.sleep(720)
 
     except Exception as e:
         telegram_bot_sendtext(f"An error occurred {sub}")
