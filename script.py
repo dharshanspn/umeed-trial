@@ -19,7 +19,7 @@ end_time = 25                    #Stating time. Default 25. In 24 hour format
 
 
 flag_login = True
-user_bot_token = '7689424290:AAFQnJN0_393aKP1RCHeDCCLpQUkN1qneTk'  #Chegg notifier bot
+user_bot_token = '8131045025:AAE9_BMb5i2pk479mubtilbSIUilPA25jWM'  #Chegg notifier bot
 
 
 
